@@ -17,7 +17,7 @@ class _CurrencyConverterMaterialPageState
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
       borderSide: BorderSide(
-        color: Color.fromARGB(255, 3, 5, 0),
+        color: Color.fromARGB(255, 55, 89, 3),
         width: 2,
         style: BorderStyle.solid,
         strokeAlign: BorderSide.strokeAlignCenter,
@@ -25,13 +25,13 @@ class _CurrencyConverterMaterialPageState
       borderRadius: BorderRadius.circular(12),
     );
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 231, 252, 206),
+      backgroundColor: const Color(0xFFEAF7E6),
       appBar: AppBar(
         title: const Text(
           'Currency Converter',
           style: TextStyle(color: Color.fromARGB(255, 65, 119, 2)),
         ),
-        backgroundColor: const Color.fromARGB(255, 208, 251, 157),
+        backgroundColor: const Color.fromARGB(255, 195, 232, 150),
         elevation: 0,
         centerTitle: true,
         actions: [],
@@ -44,11 +44,12 @@ class _CurrencyConverterMaterialPageState
             Text(
               result.toString(),
               style: const TextStyle(
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 65, 119, 2),
+                fontSize: 36,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF2E7D32),
               ),
             ),
+            SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.all(18.0),
               child: TextField(

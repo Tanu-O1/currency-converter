@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //build method is called when the widget is built. It returns a widget that is displayed on the screen.
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: CurrencyConverterMaterialPage()
       );
   }
