@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CurrencyConverterMaterialPage extends StatefulWidget {
   const CurrencyConverterMaterialPage({super.key});
@@ -27,6 +28,7 @@ class _CurrencyConverterMaterialPageState
     return Scaffold(
       backgroundColor: const Color(0xFFEAF7E6),
       appBar: AppBar(
+        
         title: const Text(
           'Currency Converter',
           style: TextStyle(color: Color.fromARGB(255, 65, 119, 2)),
@@ -35,6 +37,12 @@ class _CurrencyConverterMaterialPageState
         elevation: 0,
         centerTitle: true,
         actions: [],
+        leading: IconButton(
+  icon: Icon(Icons.arrow_back),
+  onPressed: () {
+    SystemNavigator.pop();
+  },
+),
       ),
       body: Center(
         child: Column(
@@ -83,7 +91,12 @@ class _CurrencyConverterMaterialPageState
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
-                onPressed: () {
+                onPressed: () {if (textEditingController.text.isEmpty) {
+                   ScaffoldMessenger.of(context).showSnackBar(
+                   SnackBar(content: Text("Please enter a value")),
+                 );
+                 return;
+                }
                   setState(() {
                     result = double.parse(textEditingController.text) * 90;
                   });
